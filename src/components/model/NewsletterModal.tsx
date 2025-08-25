@@ -10,7 +10,7 @@ interface FormValues {
 
 const NewsletterModal = () => {
   const schema = yup.object().shape({
-    email: yup.string().required(),
+    email: yup.string().email("Adress e-mail invalid").required("ایمیل را وارد کنید"),
   });
 
   const initialValues: FormValues = {
@@ -188,3 +188,4 @@ const NewsletterModal = () => {
 };
 
 export default NewsletterModal;
+
