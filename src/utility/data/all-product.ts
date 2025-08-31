@@ -16,7 +16,7 @@ interface AllProducts {
 const allproduct: AllProducts[] = [
   {
     title: "کیف پول زنانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
     category: "کیف پول",
@@ -30,7 +30,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "کمربند چرم مردانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/49_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/49_1.jpg",
     category: "کمربند",
@@ -114,7 +114,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "کیت آرایشی فشرده",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/55_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/55_1.jpg",
     category: "کیت آرایش",
@@ -128,7 +128,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "پیراهن طرح دار مردانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/32_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/32_2.jpg",
     category: "پوشاک مردانه",
@@ -156,7 +156,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "رژ لب مایع مات",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     category: "رژ لب",
@@ -563,3 +563,4 @@ const allproduct: AllProducts[] = [
 ];
 
 export default allproduct;
+
