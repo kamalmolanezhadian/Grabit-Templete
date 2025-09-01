@@ -1,56 +1,32 @@
-import React, { useState } from "react";
-import allproduct from "@/data/all.product";
+import React from "react";
 
-interface ItemCardProps {
-  data: typeof allproduct[0];
-  handleWishlist: (product: typeof allproduct[0]) => void;
+export interface ItemCardProps {
+  data: any;
+  handleWishlist: (item: any) => void;
 }
 
 const ItemCard: React.FC<ItemCardProps> = ({ data, handleWishlist }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   return (
-    <>
-      <div className="gi-product-content">
-        <div className="gi-product-inner">
-          <div className="gi-pro-image-outer">
-            <img src={data.image} alt={data.title} className="gi-pro-image" />
-            <img src={data.imageTwo} alt={data.title} className="gi-pro-image-two" />
-          </div>
-
-          {/* بخش پرچم فروش */}
-          {data.sale && (
-            <div className="gi-product-flags">
-              <span
-                className={`gi-product-flag ${
-                  data.sale === "جدید"
-                    ? "new"
-                    : data.sale === "حراج"
-                    ? "sale"
-                    : "special"
-                }`}
-              >
-                {data.sale}
-              </span>
-            </div>
-          )}
-
-          <div className="gi-pro-details">
-            <h3 className="gi-pro-title">{data.title}</h3>
-            <div className="gi-pro-price">
-              <span className="new-price">{data.newPrice} تومان</span>
-              {data.oldPrice && <span className="old-price">{data.oldPrice} تومان</span>}
-            </div>
-            <div className="gi-pro-actions">
-              <button onClick={() => handleWishlist(data)}>افزودن به علاقه‌مندی</button>
-            </div>
-          </div>
-        </div>
+    <div className="item-card">
+      {/* تصویر محصول */}
+      <div className="item-card-image">
+        <img src={data.image || "/placeholder.png"} alt={data.name || "Item"} />
       </div>
-    </>
+
+      {/* اطلاعات محصول */}
+      <div className="item-card-content">
+        <h3 className="item-card-title">{data.name}</h3>
+        <p className="item-card-price">${data.price}</p>
+      </div>
+
+      {/* دکمه علاقه‌مندی */}
+      <button
+        className="item-card-wishlist"
+        onClick={() => handleWishlist(data)}
+      >
+        ❤️ افزودن به علاقه‌مندی
+      </button>
+    </div>
   );
 };
 
