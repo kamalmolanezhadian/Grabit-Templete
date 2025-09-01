@@ -100,7 +100,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "رژ لب مایع مات",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     category: "رژ لب",
@@ -170,7 +170,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "لباس زنانه طرح دار",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/33_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/33_1.jpg",
     category: "پوشاک زنانه",
@@ -226,7 +226,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "کمربند چرم مردانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/49_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/49_1.jpg",
     category: "کمربند",
@@ -296,7 +296,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "رژ لب مایع مات",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
     category: "رژ لب",
@@ -310,7 +310,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "کیف پول زنانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
     category: "کیف پول",
@@ -366,7 +366,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "پیراهن طرح دار مردانه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/32_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/32_1.jpg",
     category: "پوشاک مردانه",
@@ -478,7 +478,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "آبمیوه انبه تازه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/9_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/9_2.jpg",
     category: "خوراکی",
@@ -534,7 +534,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "آبمیوه انبه تازه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/9_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/9_2.jpg",
     category: "خوراکی",
@@ -548,7 +548,7 @@ const allproduct: AllProducts[] = [
   },
   {
     title: "زنجبیل ارگانیک تازه",
-    sale: "",
+    sale: "فروش ویژه",
     image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/17_1.jpg",
     imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/17_1.jpg",
     category: "ریشه گیاهی",
@@ -563,4 +563,5 @@ const allproduct: AllProducts[] = [
 ];
 
 export default allproduct;
+
 
