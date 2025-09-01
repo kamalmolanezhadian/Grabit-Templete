@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import MultiCatalog from "../catelog/MultiCatalog";
-import ItemCard, { ItemCardProps } from "../itemCard/ItemCard";
+import ItemCard, { ItemCardProps } from "../product-item/ItemCard";
+
 
 interface CartItem {
   id: number;
@@ -63,3 +64,4 @@ const Cart: React.FC = () => {
 };
 
 export default Cart;
+
