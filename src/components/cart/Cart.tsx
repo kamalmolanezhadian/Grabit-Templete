@@ -1,3 +1,4 @@
+"use client"; 
 import React, { useState, useEffect } from "react";
 import MultiCatalog from "../catelog/MultiCatalog";
 import ItemCard, { ItemCardProps } from "../product-item/ItemCard"; // مسیر اصلاح شد
@@ -32,3 +33,4 @@ const Cart: React.FC = () => {
 };
 
 export default Cart;
+
