@@ -139,6 +139,7 @@ const ItemCard = ({ data }: any) => {
     </span>
   )}
 </span>
+              </div>
 
 
               </span>
@@ -248,6 +249,7 @@ const ItemCard = ({ data }: any) => {
 console.log("sale value:", data.sale);
 
 export default ItemCard;
+
 
 
 
