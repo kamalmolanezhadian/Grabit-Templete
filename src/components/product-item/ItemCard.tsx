@@ -1,38 +1,39 @@
+"use client";
+
 import React from "react";
 
 export interface ItemCardProps {
-  data: any;
-  handleWishlist: (item: any) => void;
-}
-interface ItemCardProps {
-  data: any;
-  handleWishlist: (item: any) => void;
+  data: {
+    id: number | string;
+    title: string;
+    image: string;
+    price: number;
+    description?: string;
+  };
+  handleWishlist: (id: number | string) => void;
 }
 
 const ItemCard: React.FC<ItemCardProps> = ({ data, handleWishlist }) => {
+  const { id, title, image, price, description } = data;
+
   return (
-    <div className="item-card">
-      {/* تصویر محصول */}
-      <div className="item-card-image">
-        <img src={data.image || "/placeholder.png"} alt={data.name || "Item"} />
+    <div className="gi-item-card">
+      <div className="gi-item-image">
+        <img src={image} alt={title} className="img-fluid" />
       </div>
-
-      {/* اطلاعات محصول */}
-      <div className="item-card-content">
-        <h3 className="item-card-title">{data.name}</h3>
-        <p className="item-card-price">${data.price}</p>
+      <div className="gi-item-details">
+        <h3 className="gi-item-title">{title}</h3>
+        {description && <p className="gi-item-description">{description}</p>}
+        <p className="gi-item-price">${price}</p>
+        <button
+          className="gi-wishlist-btn"
+          onClick={() => handleWishlist(id)}
+        >
+          افزودن به علاقه‌مندی
+        </button>
       </div>
-
-      {/* دکمه علاقه‌مندی */}
-      <button
-        className="item-card-wishlist"
-        onClick={() => handleWishlist(data)}
-      >
-        ❤️ افزودن به علاقه‌مندی
-      </button>
     </div>
   );
 };
 
 export default ItemCard;
-
