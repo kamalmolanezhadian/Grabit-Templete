@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import ItemCard, { ItemCardProps } from "../product-item/ItemCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import ItemCard, { ItemCardProps } from "../itemCard/ItemCard";
@@ -38,3 +39,4 @@ const MultiCatalog: React.FC<MultiCatalogProps> = ({ data }) => {
 };
 
 export default MultiCatalog;
+
