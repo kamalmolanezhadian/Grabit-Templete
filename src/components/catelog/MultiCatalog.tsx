@@ -47,3 +47,4 @@ const MultiCatalog: React.FC<MultiCatalogProps> = ({ fetchData, handleWishlist }
 };
 
 export default MultiCatalog;
+
