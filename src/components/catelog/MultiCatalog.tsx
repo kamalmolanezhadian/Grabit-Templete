@@ -1,42 +1,49 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import ItemCard, { ItemCardProps } from "../product-item/ItemCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import ItemCard, { ItemCardProps } from "../itemCard/ItemCard";
+import ItemCard, { ItemCardProps } from "../product-item/ItemCard";
 
 interface MultiCatalogProps {
-  data: any[];
+  fetchData: () => Promise<any[]>;
+  handleWishlist: (itemId: string) => void;
 }
 
-const MultiCatalog: React.FC<MultiCatalogProps> = ({ data }) => {
-  const [items, setItems] = useState<any[]>([]);
+const MultiCatalog: React.FC<MultiCatalogProps> = ({ fetchData, handleWishlist }) => {
+  const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      setItems(data);
-    }
-  }, [data]);
-
-  const handleWishlist = (itemId: string) => {
-    console.log("Wishlist item:", itemId);
-    // اینجا می‌توان لاجیک اضافه/حذف از لیست علاقه‌مندی را اضافه کرد
-  };
+    const getData = async () => {
+      const result = await fetchData();
+      setData(result);
+    };
+    getData();
+  }, [fetchData]);
 
   return (
     <section className="multi-catalog-section">
-      <h2 className="d-none">محصولات چندکاتالوگی</h2>
-      <Swiper spaceBetween={20} slidesPerView={4}>
-        {items.map((item: any, index: number) => (
-          <SwiperSlide key={index}>
-            <ItemCard data={item} handleWishlist={handleWishlist} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="container">
+        <h2 className="section-title">محصولات</h2>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={4}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 },
+          }}
+        >
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <ItemCard data={item} handleWishlist={handleWishlist} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 };
 
 export default MultiCatalog;
-
