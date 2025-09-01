@@ -118,7 +118,9 @@ const MultiCatalog = ({
                   >
                     {getData().map((item: any, index: number) => (
                       <SwiperSlide key={index}>
-                        <ItemCard data={item} />
+                        <ItemCard data={item} 
+                          handleWishlist={() => handleWishlist(item)}
+                          />
                       </SwiperSlide>
                     ))}
                   </Swiper>
@@ -231,3 +233,4 @@ const MultiCatalog = ({
 };
 
 export default MultiCatalog;
+
