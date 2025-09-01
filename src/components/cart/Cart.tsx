@@ -90,12 +90,11 @@ const Cart = ({
       0
     );
     setSubTotal(subtotal);
-    // Calculate VAT
     const vatAmount = subtotal * 0.2;
     setVat(vatAmount);
   }, [cartItems]);
 
-  const handleDiscountApplied = (discount) => {
+  const handleDiscountApplied = (discount: number) => {
     setDiscount(discount);
   };
 
@@ -106,20 +105,15 @@ const Cart = ({
     dispatch(removeItem(item.id));
   };
 
+  // تابع اضافه شده برای wishlist
   const handleWishlist = (item: any) => {
-    // اینجا میتونی عملیات افزودن یا حذف از لیست علاقه‌مندی‌ها را انجام بدهی
     console.log("Wishlist item:", item);
   };
 
   const { data, error } = useSWR("/api/deal", fetcher, { onSuccess, onError });
 
   if (error) return <div>محصولات بارگیری نشد</div>;
-  if (!data)
-    return (
-      <div>
-        <Spinner />
-      </div>
-    );
+  if (!data) return <Spinner />;
 
   const getData = () => {
     if (hasPaginate) return data.data;
@@ -140,15 +134,13 @@ const Cart = ({
               }}
               className="gi-pro-content cart-pro-title"
             >
-              {" "}
               آیتم را در سبد خرید اضافه کنید
             </div>
           ) : (
             <div className="row">
-              {/* <!-- Sidebar Area Start --> */}
+              {/* Sidebar */}
               <div className="gi-cart-rightside col-lg-4 col-md-12">
                 <div className="gi-sidebar-wrap">
-                  {/* <!-- Sidebar Summary Block --> */}
                   <div className="gi-sidebar-block">
                     <div className="gi-sb-title">
                       <h3 className="gi-sidebar-title">خلاصه</h3>
@@ -197,10 +189,7 @@ const Cart = ({
                                   <option disabled>در حال بارگزاری</option>
                                 ) : (
                                   filteredStateData.map((state: any, index) => (
-                                    <option
-                                      key={index}
-                                      value={state.state_code}
-                                    >
+                                    <option key={index} value={state.state_code}>
                                       {state.StateName}
                                     </option>
                                   ))
@@ -277,8 +266,9 @@ const Cart = ({
                   </div>
                 </div>
               </div>
+
+              {/* Cart Items */}
               <div className="gi-cart-leftside col-lg-8 col-md-12 m-t-991">
-                {/* <!-- cart content Start --> */}
                 <div className="gi-cart-content">
                   <div className="gi-cart-inner">
                     <div className="row">
@@ -289,9 +279,7 @@ const Cart = ({
                               <tr>
                                 <th>محصول</th>
                                 <th>قیمت</th>
-                                <th style={{ textAlign: "center" }}>
-                                  مقدار
-                                </th>
+                                <th style={{ textAlign: "center" }}>مقدار</th>
                                 <th>مجموع</th>
                                 <th>اکشن</th>
                               </tr>
@@ -299,10 +287,7 @@ const Cart = ({
                             <tbody>
                               {cartItems.map((item: any, index: number) => (
                                 <tr key={index}>
-                                  <td
-                                    data-label="Product"
-                                    className="gi-cart-pro-name"
-                                  >
+                                  <td data-label="Product" className="gi-cart-pro-name">
                                     <a href="/product-left-sidebar">
                                       <img
                                         className="gi-cart-pro-img mr-4"
@@ -312,10 +297,7 @@ const Cart = ({
                                       {item.title}
                                     </a>
                                   </td>
-                                  <td
-                                    data-label="Price"
-                                    className="gi-cart-pro-price"
-                                  >
+                                  <td data-label="Price" className="gi-cart-pro-price">
                                     <span className="amount">
                                       ${toPersianNum(item.newPrice)}
                                     </span>
@@ -366,12 +348,13 @@ const Cart = ({
                     </div>
                   </div>
                 </div>
-                {/* <!--cart content End --> */}
               </div>
             </div>
           )}
         </div>
       </section>
+
+      {/* New Products Section */}
       <section className="gi-new-product padding-tb-40">
         <div className="container">
           <div className="row overflow-hidden m-b-minus-24px">
@@ -409,28 +392,13 @@ const Cart = ({
                     autoplay={{ delay: 1000 }}
                     slidesPerView={5}
                     breakpoints={{
-                      0: {
-                        slidesPerView: 1,
-                      },
-                      320: {
-                        slidesPerView: 1,
-                        spaceBetween: 25,
-                      },
-                      426: {
-                        slidesPerView: 2,
-                      },
-                      640: {
-                        slidesPerView: 2,
-                      },
-                      768: {
-                        slidesPerView: 3,
-                      },
-                      1024: {
-                        slidesPerView: 3,
-                      },
-                      1025: {
-                        slidesPerView: 5,
-                      },
+                      0: { slidesPerView: 1 },
+                      320: { slidesPerView: 1, spaceBetween: 25 },
+                      426: { slidesPerView: 2 },
+                      640: { slidesPerView: 2 },
+                      768: { slidesPerView: 3 },
+                      1024: { slidesPerView: 3 },
+                      1025: { slidesPerView: 5 },
                     }}
                     className="deal-slick-carousel gi-product-slider"
                   >
