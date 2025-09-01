@@ -1,50 +1,23 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import ItemCard, { ItemCardProps } from "../product-item/ItemCard";
+import React from "react";
+import ItemCard, { ItemCardProps } from "../product-item/ItemCard"; // مسیر اصلاح شد
 
 interface MultiCatalogProps {
-  fetchData: () => Promise<any[]>;
+  data: ItemCardProps[]; // یا CartItem[] اگر میخوای از Cart.tsx استفاده کنی
   handleWishlist: (itemId: string) => void;
 }
 
-const MultiCatalog: React.FC<MultiCatalogProps> = ({ fetchData, handleWishlist }) => {
-  const [data, setData] = useState<any[]>([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const result = await fetchData();
-      setData(result);
-    };
-    getData();
-  }, [fetchData]);
-
+const MultiCatalog: React.FC<MultiCatalogProps> = ({ data, handleWishlist }) => {
   return (
-    <section className="multi-catalog-section">
-      <div className="container">
-        <h2 className="section-title">محصولات</h2>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={4}
-          breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-          }}
-        >
-          {data.map((item, index) => (
-            <SwiperSlide key={index}>
-              <ItemCard data={item} handleWishlist={handleWishlist} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </section>
+    <div className="multi-catalog">
+      {data.map((item) => (
+        <ItemCard
+          key={item.id}
+          {...item}
+          handleWishlist={() => handleWishlist(item.id)} // فقط آی‌دی پاس داده می‌شود
+        />
+      ))}
+    </div>
   );
 };
 
 export default MultiCatalog;
-
