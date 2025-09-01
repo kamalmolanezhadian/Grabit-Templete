@@ -245,8 +245,10 @@ const ItemCard = ({ data }: any) => {
     </>
   );
 };
+console.log("sale value:", data.sale);
 
 export default ItemCard;
+
 
 
 
