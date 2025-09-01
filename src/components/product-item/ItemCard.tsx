@@ -135,7 +135,7 @@ const ItemCard = ({ data }: any) => {
     <span className="flags">
   {data.sale && (
     <span className="sale">
-      {data.sale.toLowerCase() === "sale" ? "تخفیف" : data.sale}
+      {data.sale.toLowerCase() === "SALE" ? "تخفیف" : data.sale}
     </span>
   )}
 </span>
@@ -247,6 +247,7 @@ const ItemCard = ({ data }: any) => {
 };
 
 export default ItemCard;
+
 
 
 
