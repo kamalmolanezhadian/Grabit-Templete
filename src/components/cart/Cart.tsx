@@ -106,6 +106,11 @@ const Cart = ({
     dispatch(removeItem(item.id));
   };
 
+  const handleWishlist = (item: any) => {
+    // اینجا میتونی عملیات افزودن یا حذف از لیست علاقه‌مندی‌ها را انجام بدهی
+    console.log("Wishlist item:", item);
+  };
+
   const { data, error } = useSWR("/api/deal", fetcher, { onSuccess, onError });
 
   if (error) return <div>محصولات بارگیری نشد</div>;
@@ -186,7 +191,7 @@ const Cart = ({
                                 onChange={handleStateChange}
                               >
                                 <option value="" disabled>
-                                منطقه / ایالت
+                                  منطقه / ایالت
                                 </option>
                                 {loadingStates ? (
                                   <option disabled>در حال بارگزاری</option>
@@ -285,7 +290,7 @@ const Cart = ({
                                 <th>محصول</th>
                                 <th>قیمت</th>
                                 <th style={{ textAlign: "center" }}>
-                                مقدار
+                                  مقدار
                                 </th>
                                 <th>مجموع</th>
                                 <th>اکشن</th>
@@ -352,7 +357,7 @@ const Cart = ({
                             <div className="gi-cart-update-bottom">
                               <Link href="/">ادامه برای خرید</Link>
                               <Link href="/checkout" className="gi-btn-2">
-                              بررسی کنید
+                                بررسی کنید
                               </Link>
                             </div>
                           </div>
@@ -431,7 +436,10 @@ const Cart = ({
                   >
                     {getData().map((item: any, index: number) => (
                       <SwiperSlide key={index}>
-                        <ItemCard data={item} />
+                        <ItemCard
+                          data={item}
+                          handleWishlist={() => handleWishlist(item)}
+                        />
                       </SwiperSlide>
                     ))}
                   </Swiper>
