@@ -132,12 +132,14 @@ const ItemCard = ({ data }: any) => {
                   alt="Product"
                 />
               </Link>
-              <span className="flags">
-                {data.sale && (
-                  <span className={data.sale === "sale" ? "sale" : "sale"}>
-                    {data.sale}
-                  </span>
-                )}
+             <span className="flags">
+  {data.sale && (
+    <span className="sale">
+      {data.sale.toLowerCase() === "sale" ? "تخفیف ویژه" : data.sale}
+    </span>
+  )}
+</span>
+
               </span>
               <div className="gi-pro-actions">
                 <button
@@ -244,5 +246,6 @@ const ItemCard = ({ data }: any) => {
 };
 
 export default ItemCard;
+
 
 
