@@ -4,6 +4,10 @@ export interface ItemCardProps {
   data: any;
   handleWishlist: (item: any) => void;
 }
+interface ItemCardProps {
+  data: any;
+  handleWishlist: (item: any) => void;
+}
 
 const ItemCard: React.FC<ItemCardProps> = ({ data, handleWishlist }) => {
   return (
@@ -31,3 +35,4 @@ const ItemCard: React.FC<ItemCardProps> = ({ data, handleWishlist }) => {
 };
 
 export default ItemCard;
+
