@@ -1,0 +1,29 @@
+interface vegetable {
+    name: string;
+    href: string;
+  }
+  
+  const vegetable: vegetable[] = [
+    {
+      name: "گل‌کلم",
+      href: "/shop-left-sidebar-col-3",
+    },
+    {
+      name: "فلفل دلمه‌ای",
+      href: "/shop-left-sidebar-col-3",
+    },
+    {
+      name: "کلم بروکلی",
+      href: "/shop-left-sidebar-col-3",
+    },
+    {
+      name: "کلم",
+      href: "/shop-left-sidebar-col-3",
+    },
+    {
+      name: "گوجه‌فرنگی",
+      href: "/shop-left-sidebar-col-3",
+    },
+  ];
+  export default vegetable;
+  

@@ -1,0 +1,181 @@
+interface FashionDeal {
+  category: string;
+  sale: string;
+  image: string;
+  imageTwo: string;
+  newPrice: number;
+  oldPrice: number;
+  title: string;
+  waight: string;
+  rating: any;
+  Status: string;
+  location: string;
+  brand: string;
+  sku: number;
+  quantity: number;
+  color1: number;
+  color2: number;
+  color3: number;
+  size1: string;
+  size2: string;
+  id: number
+}
+
+const fashiondeal: FashionDeal[] = [
+  {
+    title: "پیراهن طرح دار مردانه",
+    sale: "فروش",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/35_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/35_2.jpg",
+    category: "مد و فشن",
+    newPrice: 450,
+    oldPrice: 560,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 41,
+    quantity: 1,
+    waight: "",
+    rating: 4,
+    Status: "موجود",
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M"
+  },
+  {
+    title: "لباس زنانه پرنسسی",
+    sale: "فروش",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/34_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/34_2.jpg",
+    category: "پوشاک زنانه",
+    waight: "",
+    newPrice: 250,
+    oldPrice: 300,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 132,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    rating: 3,
+    Status: "موجود",
+  },
+  {
+    title: "کفش ورزشی زنانه",
+    sale: "",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/45_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/45_1.jpg",
+    category: "ورزشی",
+    newPrice: 780,
+    oldPrice: 850,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 106,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    waight: "",
+    rating: 2,
+    Status: "موجود",
+  },
+  {
+    title: "لوسیون بدن پوست خشک",
+    sale: "فروش",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/52_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/52_1.jpg",
+    category: "لوسیون بدن",
+    newPrice: 450,
+    oldPrice: 500,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 115,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    waight: "",
+    rating: 3,
+    Status: "ناموجود",
+  },
+  {
+    title: "رژلب مایع مات",
+    sale: "جدید",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/54_1.jpg",
+    category: "رژلب",
+    newPrice: 490,
+    oldPrice: 650,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 73,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    waight: "",
+    rating: 2,
+    Status: "موجود",
+  },
+  {
+    title: "کیف پول زنانه",
+    sale: "جدید",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/48_1.jpg",
+    category: "کیف پول",
+    newPrice: 200,
+    oldPrice: 210,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 1,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    waight: "",
+    rating: 2,
+    Status: "موجود",
+  },
+  {
+    title: "شامپو ضد شوره",
+    sale: "",
+    image: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/51_1.jpg",
+    imageTwo: process.env.NEXT_PUBLIC_URL + "/assets/img/product-images/51_1.jpg",
+    category: "شامپو",
+    newPrice: 20,
+    oldPrice: 30,
+    location: "آنلاین",
+    brand: "بیشما ارگانیک",
+    sku: 23456,
+    id: 114,
+    quantity: 1,
+    color1: 1,
+    color2: 2,
+    color3: 3,
+    size1: "S",
+    size2: "M",
+    waight: "",
+    rating: 2,
+    Status: "ناموجود",
+  },
+];
+
+export default fashiondeal;

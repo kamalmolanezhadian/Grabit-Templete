@@ -1,0 +1,19 @@
+import Category from '@/components/category/Category'
+import FullWidth from '@/components/full-width/FullWidth'
+import Breadcrumb from '@/components/breadcrumb/Breadcrumb'
+
+
+const page = () => {
+  return (
+    <>
+
+
+      <Breadcrumb title={"صفحه خرید"} />
+      <Category />
+      <FullWidth lg={12} xl={2} />
+
+    </>
+  )
+}
+
+export default page
